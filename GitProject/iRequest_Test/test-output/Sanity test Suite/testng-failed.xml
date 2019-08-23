@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Sanity test Suite]">
+  <test name="TestSanity(failed)">
+    <classes>
+      <class name="com.test.iRequest_Test.homepage.RDTest1">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="endTest"/>
+          <include name="beforeMethod"/>
+          <include name="Login"/>
+          <include name="CreateRequestDef"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.test.iRequest_Test.homepage.RDTest1 -->
+    </classes>
+  </test> <!-- TestSanity(failed) -->
+</suite> <!-- Failed suite [Sanity test Suite] -->

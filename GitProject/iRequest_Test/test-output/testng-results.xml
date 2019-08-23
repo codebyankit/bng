@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="579" started-at="2019-05-29T12:36:28Z" finished-at="2019-05-29T12:36:28Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="579" started-at="2019-05-29T12:36:28Z" finished-at="2019-05-29T12:36:28Z">
+      <class name="com.test.iRequest.database.ConnectMySQL">
+        <test-method status="PASS" signature="testDB()[pri:0, instance:com.test.iRequest.database.ConnectMySQL@598067a5]" name="testDB" duration-ms="546" started-at="2019-05-29T18:06:28Z" finished-at="2019-05-29T18:06:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDB -->
+      </class> <!-- com.test.iRequest.database.ConnectMySQL -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
