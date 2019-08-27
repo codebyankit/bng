@@ -36,7 +36,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 					first.click()
 					WebUI.delay(GlobalVariable.DEFAULT_LOW_WAIT)
 					
-/* ************************************Code of approving the request******************************************** */
+ ***********************************Code of approving the request******************************************** 
 					String capturedReqNum=WebUI.getText(findTestObject(Popup_extractRequestNumber))
 					ActionBot.sendKeys(driver, ApproveRequestpopup_comment, 'Approving request')
 					ActionBot.click(Popup_ApproveButton)
@@ -99,7 +99,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 					first.click()
 					WebUI.delay(GlobalVariable.DEFAULT_LOW_WAIT)
 					
-/* ************************************Code of rejecting the request******************************************** */
+ ***********************************Code of rejecting the request******************************************** 
 					String capturedReqNum=WebUI.getText(findTestObject(Popup_extractRequestNumber))
 					ActionBot.sendKeys(driver, ApproveRequestpopup_comment, 'Rejecting request')
 					ActionBot.click(Popup_RejectButton)
@@ -161,7 +161,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		}
 		return status
 	}
-	/*
+	
 	 @Keyword
 	 public static boolean ToCheck3DotIsClickable(WebDriver driver){
 	 boolean status = false
@@ -179,7 +179,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 	 }
 	 return status
 	 }
-	 */
+	 
 
 
 
@@ -232,7 +232,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 
 
 
-	/* **************************************************** Delegate******************************************************* */
+	 *************************************************** Delegate******************************************************* 
 	@Keyword
 	public static boolean Click_Action_Delegate(WebDriver driver){
 		boolean status = false
@@ -262,13 +262,13 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 			ActionBot.click(Select_SearchedDelegateTo)
 			ActionBot.sendKeys(driver, Popup_Delegate_ReasonForDelegate_SearchBox, "Delegating the request through automation")
 
-			/*ActionBot.click(Popup_Delegate_Attachment_Link)
+			ActionBot.click(Popup_Delegate_Attachment_Link)
 			 String userDir =System.getProperty('user.dir')
 			 String filePath = (userDir + '\\') + 'Data Files\\App Test Data\\FilesToUpload\\eCatalogue_User_Guides.pdf'
 			 customKeywords.Uploadfile.uploadFile(findTestObject(Popup_Delegate_Attachment_Link), filePath)
 			 WebUI.delay(GlobalVariable.DEFAULT_LOW_WAIT)
 			 customKeywords.Enterkey.enter()
-			 WebUI.delay(GlobalVariable.DEFAULT_LOW_WAIT)*/
+			 WebUI.delay(GlobalVariable.DEFAULT_LOW_WAIT)
 
 			ActionBot.click(Popup_Delegate_DelegateButton)
 			WebUI.delay(GlobalVariable.DEFAULT_LOW_WAIT)
@@ -292,8 +292,8 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		return status
 	}
 
-	/* ************************************************Review******************************************************************* */
-	/* ******Edit Request****** */ 
+	 ***********************************************Review******************************************************************* 
+	 *****Edit Request******  
 	@Keyword
 	public static boolean MyApproval_Review_EditRequest(WebDriver driver){
 		boolean status=false
@@ -321,7 +321,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		return status
 	}
 
-	/* ******View Request****** */
+	 *****View Request****** 
 
 	@Keyword
 	public static boolean MyApproval_ReviewRequest(WebDriver driver){
@@ -356,7 +356,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 	public static boolean MyApproval_Review_Approve(WebDriver driver){
 		boolean status=false
 		try{
-			/*ActionBot.click(Review_ApproveLink)*/
+			ActionBot.click(Review_ApproveLink)
 			WebUI.delay(GlobalVariable.DEFAULT_LOW_WAIT)
 			String capturedReqNum=WebUI.getText(findTestObject(Popup_extractRequestNumber))
 			ActionBot.sendKeys(driver, ApproveRequestpopup_comment, 'Approving request')
@@ -386,7 +386,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		boolean status=false
 		try{
 
-			/*ActionBot.click(Review_RejectLink)*/
+			ActionBot.click(Review_RejectLink)
 			WebUI.delay(GlobalVariable.DEFAULT_LOW_WAIT)
 
 			String capturedReqNum=WebUI.getText(findTestObject(Popup_extractRequestNumber))
@@ -417,7 +417,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		boolean status=false
 		try{
 
-		/*	ActionBot.click(Review_DelegateLink)*/
+			ActionBot.click(Review_DelegateLink)
 			WebUI.delay(GlobalVariable.DEFAULT_LOW_WAIT)
 
 			String successMsg=WebUI.getText(findTestObject(Delegate_PopUp_Success_Validation))
@@ -437,7 +437,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		return status
 	}
 
-	/* ******************************************Review Clickable********************************************************************* */
+	 *****************************************Review Clickable********************************************************************* 
 
 	@Keyword
 	public static boolean MyApproval_Review_ApproveLink_Clickable(WebDriver driver){
@@ -491,14 +491,14 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		return status
 	}
 	
-	/* **************************************************Attachment while approval****************************************************** */
+	 *************************************************Attachment while approval****************************************************** 
 	
 	@Keyword
 	
 	//WebUI.uploadFile(findTestObject('input_browse'), 'D:\\test-photo.png')
 	
 	public static boolean MyApproval_AddAttachment(WebDriver driver){
-		boolean status=false
+		boolean status=false;
 		try{
 			ActionBot.click(ApproveRequestpopup_Attachment)
 			WebUI.uploadFile(findTestObject(ApproveRequestpopup_Attachment), 'D:\\RentReceipt.doc')
@@ -513,10 +513,10 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		return status
 	}
 	
-	 /* ************************************************************ReviewPage: Links**************************************************************************** */
+	  ***********************************************************ReviewPage: Links**************************************************************************** 
 	@Keyword
 	public static boolean Review_MyApprovalLink(WebDriver driver){
-		boolean status=false
+		boolean status=false;
 		try{
 			ActionBot.click(Review_ApproveLink)
 			//WebUI.delay(GlobalVariable.DEFAULT_MEDIUM_WAIT)
@@ -527,7 +527,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		
 		catch(Exception e){
 			logger.info("************************Unable to click on approve link*******************************")
-			status=false
+			status=false;
 			throw e
 		}
 		
@@ -537,7 +537,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 	
 	@Keyword
 	public static boolean Review_RejectLink(WebDriver driver){
-		boolean status=false
+		boolean status=false;
 		try{
 			ActionBot.click(Review_RejectLink)
 			//WebUI.delay(GlobalVariable.DEFAULT_MEDIUM_WAIT)
@@ -558,7 +558,7 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 	
 	@Keyword
 	public static boolean Review_DelegateLink(WebDriver driver){
-		boolean status=false
+		boolean status=false;
 		try{
 			ActionBot.click(Review_DelegateLink)
 			//WebUI.delay(GlobalVariable.DEFAULT_MEDIUM_WAIT)
@@ -575,6 +575,62 @@ public class Page_MyApprovalPO implements S2P_OR, S2P_OR_MyApprovals_ReviewPage,
 		
 		return status
 	}
+	
+	*******************************************************************************************************************************************************************************************************************
+	
+	import java.util.List;
+
+	public class Discovery {
+	      
+	      public static void main(String[] args) {
+	            
+	            DiscoveryP1 p1 = new DiscoveryP1();
+	            List<Deck> list = p1.addFavoites();
+	            DiscoveryP2 p2 = new DiscoveryP2();
+	            p2.verifyFavoites(list);
+	            
+	      }
+
+	}
+
+
+	import java.util.ArrayList;
+	import java.util.List;
+
+	public class DiscoveryP1 {
+	      
+	      public List<Deck> addFavoites(){
+	            Deck d1 = new Deck("Man vs Wild","Desc");
+	            Deck d2 = new Deck("Engg Marvels","Desc2");
+	            List<Deck> list = new ArrayList<>();
+	            list.add(d1);
+	            list.add(d2);
+	            return list;
+	      }
+
+	}
+
+
+	import java.util.ArrayList;
+	import java.util.List;
+
+	public class DiscoveryP2 {
+
+	      public boolean verifyFavoites(List<Deck> list){
+	            List<Deck> pageDetails = new ArrayList<>();
+	            Deck d1 = new Deck("Man vs Wild","Desc");
+	            Deck d2 = new Deck("Engg Marvels","Desc2");
+	            pageDetails.add(d1);
+	            pageDetails.add(d2);
+	            return pageDetails.containsAll(list);
+	      }
+	}
+
+
+
+
+
+	
 	
 
 }
