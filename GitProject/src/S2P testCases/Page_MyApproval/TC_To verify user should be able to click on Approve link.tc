@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_To verify user should be able to click on Approve link</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ccf77f3c-1ab6-4cf4-8ee0-31414ec2c772</testCaseGuid>
+</TestCaseEntity>

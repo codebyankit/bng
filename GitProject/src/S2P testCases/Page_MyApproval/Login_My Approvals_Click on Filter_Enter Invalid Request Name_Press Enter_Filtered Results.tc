@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Login_My Approvals_Click on Filter_Enter Invalid Request Name_Press Enter_Filtered Results</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e3449605-9f3e-49db-b447-a7a97081d36e</testCaseGuid>
+</TestCaseEntity>

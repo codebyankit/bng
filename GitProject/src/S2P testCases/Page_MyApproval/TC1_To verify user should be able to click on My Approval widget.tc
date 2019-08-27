@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC1_To verify user should be able to click on My Approval widget</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b1b4bf3d-de58-40ef-8871-5fd84b5f66b9</testCaseGuid>
+</TestCaseEntity>

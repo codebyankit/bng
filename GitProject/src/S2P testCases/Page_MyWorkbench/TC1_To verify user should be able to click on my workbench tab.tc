@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC1_To verify user should be able to click on my workbench tab</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bd124532-93fd-41b2-93c8-670b444e2420</testCaseGuid>
+</TestCaseEntity>
