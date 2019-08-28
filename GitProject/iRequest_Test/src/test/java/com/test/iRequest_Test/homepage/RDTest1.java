@@ -20,12 +20,12 @@ public class RDTest1 extends TestBase {
 
 		try {
 			log.info("=======Starting verifyLogin test========");
-			// homepage = new HomePage(driver);
+			 homepage = new HomePage(driver);
 			
 			loginPage.LoginToApplication("ankit.gaurav@zycus.com", "Zycus@123");
 			log.info("=======Finished verifyLogin test========");
 
-			// homepage.iRequestCard();
+			 //homepage.iRequestCard();
 			log.info("******************iRequest selected*************");
 			getScreenShot("verifyLogin");
 
@@ -37,7 +37,7 @@ public class RDTest1 extends TestBase {
 
 	@Test(priority = 2)
 	public void CreateRequestDef() {
-		// homepage = new HomePage(driver);
+		 homepage = new HomePage(driver);
 		homepage.CreateNewRD("RDAutomation2", "AutoType2");
 	}
 

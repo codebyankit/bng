@@ -38,8 +38,9 @@ public class ActionBot {
 		public static Logger logger = Logger.getLogger(ActionBot.class)
 
 
-		public static void click(String elementPath) {
+		public static void click( String elementPath) {
 			try {
+				if(driver.w)
 				if(WebUI.waitForElementVisible(findTestObject(elementPath),GlobalVariable.DEFAULT_MEDIUM_WAIT)) {
 					if(WebUI.waitForElementClickable(findTestObject(elementPath),GlobalVariable.DEFAULT_MEDIUM_WAIT)) {
 						WebUI.click(findTestObject(elementPath))
@@ -236,124 +237,124 @@ public class ActionBot {
 		 */
 		@Keyword
 		public static void clickByXpath(WebDriver driver,String xPath) throws Exception {
-			WebElement element = null
-			WebDriverWait wait = new WebDriverWait(driver, 20)
-			logger.info("Performing Click on "+xPath)
+			WebElement element = null;
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			logger.info("Performing Click on "+xPath);
 			try {
-				element = findElementByXpath(driver, xPath)
+				element = findElementByXpath(driver, xPath);
 
 				if(element!=null) {
-					logger.info(xPath+" is visible.")
+					logger.info(xPath+" is visible.");
 
 					if(waitUntilClickable(driver,element)) {
-						element.click()
-						logger.info("Clicked on "+xPath)
+						element.click();
+						logger.info("Clicked on "+xPath);
 					}
 					else {
-						logger.error(xPath +"Element not Clickable in 1st attempt")
-						throw new ElementNotSelectableException("Unable to click on element in 1st Attempt")
+						logger.error(xPath +"Element not Clickable in 1st attempt");
+						throw new ElementNotSelectableException("Unable to click on element in 1st Attempt");
 					}
 				}
 				else {
-					logger.error(xPath +"Element not Visible in 1st attempt")
-					throw new ElementNotVisibleException("Unable to find element in 1st Attempt")
+					logger.error(xPath +"Element not Visible in 1st attempt");
+					throw new ElementNotVisibleException("Unable to find element in 1st Attempt");
 				}
 			}
 			catch(ElementNotSelectableException e2) {
 				try {
-					logger.info("Element was not clickable in 1st attempt. Peforming click again on element.")
+					logger.info("Element was not clickable in 1st attempt. Peforming click again on element.");
 
-					element = findElement(driver, xPath)
+					element = findElement(driver, xPath);
 					if(waitUntilClickable(driver,element)) {
-						element.click()
-						logger.info("Clicking on "+xPath)
+						element.click();
+						logger.info("Clicking on "+xPath);
 					}
 					else {
-						logger.error(xPath+" Element not clickable in 2nd attempt")
-						throw new ElementNotSelectableException("Unable to click on element in 2nd Attempt")
+						logger.error(xPath+" Element not clickable in 2nd attempt");
+						throw new ElementNotSelectableException("Unable to click on element in 2nd Attempt");
 					}
 				}
 				catch(Exception e3) {
-					logger.error("Exception Occured")
-					throw new Exception(e3)
+					logger.error("Exception Occured");
+					throw new Exception(e3);
 				}
 			}
 			catch(ElementNotVisibleException e) {
 				try {
 
-					logger.info("Element was not visible in 1st attempt. Searching element again.")
+					logger.info("Element was not visible in 1st attempt. Searching element again.");
 
-					element = findElement(driver, xPath)
+					element = findElement(driver, xPath);
 					if(wait.until(ExpectedConditions.visibilityOf(element))) {
 						if(waitUntilClickable(driver,element)) {
-							element.click()
-							logger.info("Clicking on "+xPath)
+							element.click();
+							logger.info("Clicking on "+xPath);
 						}
 						else {
-							logger.error(xPath+" Element not clickable in 1st attempt")
-							throw new ElementNotSelectableException("Unable to click on element in 1st Attempt")
+							logger.error(xPath+" Element not clickable in 1st attempt");
+							throw new ElementNotSelectableException("Unable to click on element in 1st Attempt");
 						}
 					}
 					else {
-						logger.error(xPath+" Element not visible in 2nd attempt")
-						throw new ElementNotVisibleException("Unable to find element in 2nd Attempt")
+						logger.error(xPath+" Element not visible in 2nd attempt");
+						throw new ElementNotVisibleException("Unable to find element in 2nd Attempt");
 					}
 				}
 				catch(Exception e1) {
-					logger.error("Exception Ouccured")
-					throw new Exception(e1)
+					logger.error("Exception Ouccured");
+					throw new Exception(e1);
 				}
 			}
 			catch(Exception e4) {
 				try {
-					logger.info("Exception "+e4.getMessage()+" occurred. Searching element again.")
+					logger.info("Exception "+e4.getMessage()+" occurred. Searching element again.");
 
-					element = findElement(driver, xPath)
+					element = findElement(driver, xPath);
 					if(wait.until(ExpectedConditions.visibilityOf(element))) {
 						if(waitUntilClickable(driver,element)) {
-							element.click()
-							logger.info("Clicking on "+xPath)
+							element.click();
+							logger.info("Clicking on "+xPath);
 						}
 						else {
-							logger.error(xPath+" Element not clickable in Last attempt")
-							throw new ElementNotSelectableException("Unable to click on element in Last Attempt")
+							logger.error(xPath+" Element not clickable in Last attempt");
+							throw new ElementNotSelectableException("Unable to click on element in Last Attempt");
 						}
 					}
 					else {
-						logger.error(xPath+" Element not visible in Last attempt")
-						throw new ElementNotVisibleException("Unable to find element in Last Attempt")
+						logger.error(xPath+" Element not visible in Last attempt");
+						throw new ElementNotVisibleException("Unable to find element in Last Attempt");
 					}
 				}
 				catch(Exception e1) {
-					logger.error("Exception Ouccured")
-					throw new Exception(e1)
+					logger.error("Exception Ouccured");
+					throw new Exception(e1);
 				}
 			}
 		}
 
 		@Keyword
 		public static boolean waitUntilClickable(WebDriver driver,WebElement element) throws Exception {
-			boolean status = false
-			WebDriverWait wait = new WebDriverWait(driver, 20)
+			boolean status = false;
+			WebDriverWait wait = new WebDriverWait(driver, 20);
 			try {
 				if(wait.until(ExpectedConditions.elementToBeClickable(element))) {
-					status = true
-					logger.info("Element is clickable.")
+					status = true;
+					logger.info("Element is clickable.");
 				}
 			}
 			catch(Exception e) {
 				try {
 					if(wait.until(ExpectedConditions.elementToBeClickable(element))) {
-						status = true
-						logger.info("Element is clickable.")
+						status = true;
+						logger.info("Element is clickable.");
 					}
 				}
 				catch(Exception e1) {
-					logger.error("Element is not clickable.")
-					throw new Exception(e1)
+					logger.error("Element is not clickable.");
+					throw new Exception(e1);
 				}
 			}
-			return status
+			return status;
 		}
 
 		/**

@@ -3,11 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.iRequest.database.ConnectMySQL">
+      <class name="com.test.iRequest_Test.homepage.RDTest1">
         <methods>
-          <include name="testDB"/>
+          <include name="endTest"/>
+          <include name="Login"/>
+          <include name="CreateRequestDef"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.test.iRequest.database.ConnectMySQL -->
+      </class> <!-- com.test.iRequest_Test.homepage.RDTest1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

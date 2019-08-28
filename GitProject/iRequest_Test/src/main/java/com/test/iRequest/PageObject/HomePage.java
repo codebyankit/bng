@@ -32,7 +32,7 @@ public class HomePage extends TestBase {
 	 * @FindBy(xpath = "//div[@class='blockBg']/div[@class='iRequestBigLogo']")
 	 * WebElement iRequestCard;
 	 */
-
+	
 	@FindBy(xpath = "//span[@class='dIblock vMiddle']")
 	WebElement NewRequestBtn;
 
@@ -193,6 +193,8 @@ public class HomePage extends TestBase {
 	}
 
 	public void CreateNewRD(String RDName, String PartialRDType) {
+		//String a1=driver.findElement(By.id("txtRequestTypeName")).toString();
+		
 
 		log.info("**************Selecting Request Definition option*****************");
 		SelectRequestDeftag.click();
