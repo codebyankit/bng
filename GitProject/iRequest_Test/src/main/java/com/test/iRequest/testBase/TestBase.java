@@ -126,6 +126,7 @@ public class TestBase {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(UsernameXpath);
 		actions.click();
+		actions.build().perform();
 	}
 
 	public void actionClickAndSendKeys(WebDriver driver, WebElement UsernameXpath, String Username) {

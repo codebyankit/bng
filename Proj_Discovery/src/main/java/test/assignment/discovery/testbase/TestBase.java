@@ -4,10 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
@@ -68,6 +66,13 @@ public class TestBase {
 	public WebDriver getDriver() {
 		return driver;
 	}
+	
+	public void ActionClick(WebDriver driver, WebElement UsernameXpath) {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(UsernameXpath);
+		actions.click();
+		actions.build().perform();
+	}
 	public WebElement WaitForElementClickable(WebDriver driver, WebElement element, long timeOutInSeconds) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -101,12 +106,12 @@ public class TestBase {
 
 	public void NavigateToGoDiscoveryUrl() {
 		driver.get("https://go.discovery.com");
-		implicitwait(10, TimeUnit.SECONDS);
+		implicitwait(20, TimeUnit.SECONDS);
 	}
 	
 	public void NavigateToMyVideos(WebDriver driver) {
 		driver.get("https://www.discovery.com/my-videos");
-		implicitwait(10, TimeUnit.SECONDS);
+		implicitwait(15, TimeUnit.SECONDS);
 	}
 
 	public void implicitwait(long time, TimeUnit unit) {
@@ -199,7 +204,7 @@ public class TestBase {
 
 		try {
 			String reportDirectory = new File(System.getProperty("user.dir")).getAbsolutePath()
-					+ "/src/main/java/com/test/automation/uiAutomation/screenshot/";
+					+ "/src/main/java/test/assignment/discovery/screenshot/";
 			File destFile = new File(
 					(String) reportDirectory + name + "_" + formater.format(calendar.getTime()) + ".png");
 			FileUtils.copyFile(scrFile, destFile);

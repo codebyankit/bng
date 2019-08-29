@@ -34,37 +34,47 @@ public class MyVideosImpl extends TestBase {
 	}
 
 	public void MouseOverAndVerifyVideos(String ExpectedTitle, String ExpectedDesc) throws Exception {
+		int count=0;
+		int j=0;
+		if(count>0){
+			j=j+1;
+		}
+		
 		// for (int i = 1; i >= 0; i--) {
-		for (int i = 0; i <= 1; i++) {
+		for (int i = j; i <= j; i++) {
 			try {
 				WebElement ele = FavoriteDescription.get(i);
+				System.out.println(ele);
 				moveToElement(driver, ele);
 				Thread.sleep(5000);
 				try {
 					String Myvideos_CapturedTitle = FavoriteTitle.get(i).getText();
-					System.out.println("Captured Favorite video title is:" + Myvideos_CapturedTitle);
+					System.out.println("Added favorite video title is:" + Myvideos_CapturedTitle);
 					if ((Myvideos_CapturedTitle !="null")&& (Myvideos_CapturedTitle.equals(ExpectedTitle))){
-						log.info("Title Matched");
+						System.out.println("Title Matched");
+						log.info("*****************Title Matched******************************");
 					}
 					else{
-						
-						log.info("Title do not match");
+						System.out.println("Title Matched");
+						log.info("*******************Title do not match***********************");
 					}
 					try {
 						String Myvideos_CapturedDesc = FavoriteDescription.get(i).getText();
 						System.out.println("Captured Captured Favorite video desc is:" + Myvideos_CapturedDesc);
 						if ((Myvideos_CapturedDesc !="null")&& (ExpectedDesc.equals(Myvideos_CapturedDesc))){
-							log.info("Title Matched");
+							System.out.println("Description Matched");
+							log.info("***************************Description Matched****************************");
 						}
 						else{
-							
-							log.info("Title do not match");
+							System.out.println("Description Matched");
+							log.info("*********************Description do not match*****************************");
 						}
 					
 
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -74,6 +84,7 @@ public class MyVideosImpl extends TestBase {
 
 			}
 		}
+		count++;
 	}
 
 }

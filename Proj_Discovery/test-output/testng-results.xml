@@ -2,50 +2,50 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="277062" started-at="2019-08-28T05:21:47Z" finished-at="2019-08-28T05:26:24Z">
+  <suite name="Default suite" duration-ms="192038" started-at="2019-08-29T06:02:06Z" finished-at="2019-08-29T06:05:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="277062" started-at="2019-08-28T05:21:47Z" finished-at="2019-08-28T05:26:24Z">
-      <class name="test.assignment.proj_discovery.TestNg2">
-        <test-method status="PASS" signature="startBrowser()[pri:0, instance:test.assignment.proj_discovery.TestNg2@1500955a]" name="startBrowser" is-config="true" duration-ms="223102" started-at="2019-08-28T10:51:47Z" finished-at="2019-08-28T10:55:30Z">
+    <test name="Default test" duration-ms="192038" started-at="2019-08-29T06:02:06Z" finished-at="2019-08-29T06:05:18Z">
+      <class name="test.assignment.proj_discovery.TestNg1">
+        <test-method status="PASS" signature="startBrowser()[pri:0, instance:test.assignment.proj_discovery.TestNg1@1500955a]" name="startBrowser" is-config="true" duration-ms="102575" started-at="2019-08-29T11:32:06Z" finished-at="2019-08-29T11:33:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startBrowser -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:test.assignment.proj_discovery.TestNg2@1500955a]" name="beforeMethod" is-config="true" duration-ms="54" started-at="2019-08-28T10:55:30Z" finished-at="2019-08-28T10:55:30Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:test.assignment.proj_discovery.TestNg1@1500955a]" name="beforeMethod" is-config="true" duration-ms="6" started-at="2019-08-29T11:33:49Z" finished-at="2019-08-29T11:33:49Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void test.assignment.proj_discovery.TestNg2.SelectVideos() throws java.lang.Exception]]>
+                <![CDATA[public void test.assignment.proj_discovery.TestNg1.SelectVideos() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="SelectVideos()[pri:0, instance:test.assignment.proj_discovery.TestNg2@1500955a]" name="SelectVideos" duration-ms="39023" started-at="2019-08-28T10:55:30Z" finished-at="2019-08-28T10:56:09Z">
+        <test-method status="PASS" signature="SelectVideos()[pri:0, instance:test.assignment.proj_discovery.TestNg1@1500955a]" name="SelectVideos" duration-ms="83709" started-at="2019-08-29T11:33:49Z" finished-at="2019-08-29T11:35:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectVideos -->
-        <test-method status="PASS" signature="afterclass()[pri:0, instance:test.assignment.proj_discovery.TestNg2@1500955a]" name="afterclass" is-config="true" duration-ms="4984" started-at="2019-08-28T10:56:09Z" finished-at="2019-08-28T10:56:14Z">
+        <test-method status="PASS" signature="afterclass()[pri:0, instance:test.assignment.proj_discovery.TestNg1@1500955a]" name="afterclass" is-config="true" duration-ms="1956" started-at="2019-08-29T11:35:12Z" finished-at="2019-08-29T11:35:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterclass -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:test.assignment.proj_discovery.TestNg2@1500955a]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-28T10:56:09Z" finished-at="2019-08-28T10:56:09Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:test.assignment.proj_discovery.TestNg1@1500955a]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-29T11:35:12Z" finished-at="2019-08-29T11:35:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=SelectVideos status=SUCCESS method=TestNg2.SelectVideos()[pri:0, instance:test.assignment.proj_discovery.TestNg2@1500955a] output={null}]]]>
+                <![CDATA[[TestResult name=SelectVideos status=SUCCESS method=TestNg1.SelectVideos()[pri:0, instance:test.assignment.proj_discovery.TestNg1@1500955a] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:test.assignment.proj_discovery.TestNg2@1500955a]" name="endTest" is-config="true" duration-ms="9853" started-at="2019-08-28T10:56:14Z" finished-at="2019-08-28T10:56:24Z">
+        <test-method status="PASS" signature="endTest()[pri:0, instance:test.assignment.proj_discovery.TestNg1@1500955a]" name="endTest" is-config="true" duration-ms="3765" started-at="2019-08-29T11:35:14Z" finished-at="2019-08-29T11:35:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-      </class> <!-- test.assignment.proj_discovery.TestNg2 -->
+      </class> <!-- test.assignment.proj_discovery.TestNg1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

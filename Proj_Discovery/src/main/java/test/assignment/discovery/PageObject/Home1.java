@@ -1,5 +1,6 @@
 package test.assignment.discovery.PageObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -14,6 +15,7 @@ public class Home1 extends TestBase {
 
 	public static final Logger log = Logger.getLogger(Home1.class.getName());
 	WebDriver driver;
+	MyVideosImpl mvpl;
 
 	public Home1(WebDriver driver) {
 		this.driver = driver;
@@ -44,46 +46,62 @@ public class Home1 extends TestBase {
 	public void ScrollToRecommendedVideos() {
 		ScrollToELement(RecommendedShow, driver);
 	}
-
-	public List<String> mouseoverAdd() throws Exception {
-		for (int i = 0; i <= 1; i++) {
+	
+	@FindBy(xpath = "//h2[@class='localStorageCarousel__heading']")
+	private WebElement FavoriteShowLabel;
+	
+	public void ScrollToFavoriteShows() {
+		ScrollToELement(FavoriteShowLabel, driver);
+	}
+	
+	public void mouseoverAdd() throws Exception {
+		for (int i = 0; i <= 2; i=i+2) {
 			try {
 				WebElement ele = RecommendedDescription.get(i);
 				moveToElement(driver, ele);
 				Thread.sleep(5000);
 
-				try {
-					String icon = PlusIcon.get(i).getText();
-					clickElementByXpath(icon, driver);
+				/*String icon = PlusIcon.get(i).getText();
+				clickElementByXpath(icon, driver);*/
+				/*WebElement icon = PlusIcon.get(i);
+				moveToElementAndClick(driver, icon);*/
+				WebElement icon = PlusIcon.get(i);
+				System.out.println(icon.getText());
+				// WaitForElementClickable(driver, icon, 20);
+				javascriptexeClick(icon, driver);
 
-					try {
-						String Recommended_CapturedDesc = RecommendedDescription.get(i).getText();
-						System.out.println("Captured desc is:" + Recommended_CapturedDesc);
-					} catch (Exception e) {
-						e.printStackTrace();
+				String Recommended_CapturedDesc = RecommendedDescription.get(i).getText();
+				// System.out.println("Captured desc is:" +Recommended_CapturedDesc);
 
-					}
+				List<String> desc = new ArrayList<String>();
+				desc.add(Recommended_CapturedDesc);
+				for (int j = 0; j <= 1; j++) {
+					String Desc = desc.get(j);
+					System.out.println("Desc value is:" + Desc);
+				//}
 
-					try {
-						String Recommended_CapturedTitle = RecommendedTitle.get(i).getText();
-						System.out.println("Captured title is:" + Recommended_CapturedTitle);
-						
-						
-					}
-
-					catch (Exception e) {
-						e.printStackTrace();
-
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-
+				String Recommended_CapturedTitle = RecommendedTitle.get(i).getText();
+				// System.out.println("Captured title is:" +
+				// Recommended_CapturedTitle);
+				List<String> title = new ArrayList<String>();
+				title.add(Recommended_CapturedTitle);
+				//for (int k = 0; k <= 1; k++) {
+					String Title = title.get(j);
+					System.out.println("Title value is:" + Title);
+				//}
+				NavigateToMyVideos(driver);
+				ScrollToFavoriteShows();
+				mvpl = new MyVideosImpl(driver);
+				mvpl.MouseOverAndVerifyVideos(Title, Desc);
 				}
-			} catch (Exception e) {
+			}
+
+			catch (Exception e) {
 				e.printStackTrace();
 
 			}
 		}
+
 	}
 
 }

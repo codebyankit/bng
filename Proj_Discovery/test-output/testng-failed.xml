@@ -6,8 +6,8 @@
       <class name="test.assignment.proj_discovery.TestNg1">
         <methods>
           <include name="endTest"/>
+          <include name="SelectVideos"/>
           <include name="startBrowser"/>
-          <include name="Login"/>
         </methods>
       </class> <!-- test.assignment.proj_discovery.TestNg1 -->
     </classes>

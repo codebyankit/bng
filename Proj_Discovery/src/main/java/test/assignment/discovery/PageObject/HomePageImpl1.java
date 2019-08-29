@@ -10,17 +10,14 @@ import org.openqa.selenium.support.PageFactory;
 
 import test.assignment.discovery.testbase.TestBase;
 
-public class HomePageImpl extends TestBase {
+public class HomePageImpl1 extends TestBase {
 
 	public static final Logger log = Logger.getLogger(HomePageImpl.class.getName());
 	WebDriver driver;
 	MyVideosImpl mvpl;
 
-	public HomePageImpl(WebDriver driver) {
+	public HomePageImpl1(WebDriver driver) {
 		this.driver = driver;
-		// We use initElements method to initialize web elements.Init is static
-		// method
-		// of pagefactory class
 		PageFactory.initElements(driver, this);
 	}
 
@@ -73,108 +70,51 @@ public class HomePageImpl extends TestBase {
 	}
 
 	public boolean ScrollToRecommendedVideos() throws Exception {
-		boolean status = false;
-		try {
-			ScrollToELement(RecommendedShow, driver);
-			status = true;
-		} catch (Exception e) {
-			status = false;
+		boolean status=false;
+		try{
+		ScrollToELement(RecommendedShow, driver);
+		status=true;
+		}
+		catch(Exception e){
+			status=false;
 			throw e;
 		}
 		return status;
 	}
 
-	public void MouseOver() throws Exception {
-	
-		try {
-			WebElement ele = RecommendedDescription.get(0);
-			moveToElementAndClick(driver, ele);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	public boolean MouseOverAndAdd() throws Exception {
 		boolean status=false;
-		for (int i = 0; i <= 1; i++) {
+		for (int i = 0; i <= 2; i=i+2) {
 			try {
-				if (i == 1) {
+				if (i == 2) {
 					ScrollToRecommendedVideos();
+					// Thread.sleep(4000);
 				}
 				WebElement ele = RecommendedDescription.get(i);
 				moveToElement(driver, ele);
 				Thread.sleep(5000);
-				try {
-					WebElement icon = PlusIcon.get(i);
-					javascriptexeClick(icon, driver);
+				
+				WebElement icon = PlusIcon.get(i);
+				javascriptexeClick(icon, driver);				
+				String Recommended_CapturedDesc = RecommendedDescription.get(i).getText();
+				System.out.println("Captured desc of" + i + "th element is:" + Recommended_CapturedDesc);
 
-					try {
-						String Recommended_CapturedDesc = RecommendedDescription.get(i).getText();
-						System.out.println("Captured desc of" + i + "th element is:" + Recommended_CapturedDesc);
+				String Recommended_CapturedTitle = RecommendedTitle.get(i).getText();
+				System.out.println("Captured title of" + i + "th element is:" + Recommended_CapturedTitle);
 
-						try {
-							String Recommended_CapturedTitle = RecommendedTitle.get(i).getText();
-							System.out.println("Captured title of" + i + "th element is:" + Recommended_CapturedTitle);
-							try {
-								NavigateToMyVideos(driver);
-								ScrollToFavoriteShows();
-								WebElement ele1 = FavoriteDescription.get(i);
-								moveToElement(driver, ele1);
-								Thread.sleep(5000);
-								for (int j = 0; j <= 0; j++) {
-									try {
-										String Myvideos_CapturedTitle = FavoriteTitle.get(i).getText();
-										System.out
-												.println("Captured Favorite video title is:" + Myvideos_CapturedTitle);
-										if ((Myvideos_CapturedTitle != "null")
-												&& (Recommended_CapturedTitle.equals(Myvideos_CapturedTitle))) {
-											log.info("Title Matched");
-										} else {
+				NavigateToMyVideos(driver);
+				ScrollToFavoriteShows();
+				mvpl = new MyVideosImpl(driver);
+				mvpl.MouseOverAndVerifyVideos(Recommended_CapturedTitle, Recommended_CapturedDesc);
+				NavigateToGoDiscoveryUrl();
+				
+				status=true;
 
-											log.info("Title do not match");
-										}
-										try {
-											String Myvideos_CapturedDesc = FavoriteDescription.get(i).getText();
-											System.out.println("Captured Captured Favorite video desc is:"
-													+ Myvideos_CapturedDesc);
-											if ((Myvideos_CapturedDesc != "null")
-													&& (Recommended_CapturedDesc.equals(Myvideos_CapturedDesc))) {
-												log.info("Desc Matched");
-												NavigateToGoDiscoveryUrl();
-											} else {
-
-												log.info("Desc do not match");
-											}
-
-										} catch (Exception e) {
-											e.printStackTrace();
-
-										}
-									} catch (Exception e) {
-										e.printStackTrace();
-									}
-								}
-
-							} catch (Exception e) {
-								e.printStackTrace();
-
-							}
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
 			} catch (Exception e) {
 				e.printStackTrace();
-
+				status=false;
 			}
 		}
-		
 		return status;
 	}
 
